@@ -68,17 +68,17 @@ int main()
     const char map[] = "0000222222220000"\
                        "1              0"\
                        "1      11111   0"\
-                       "1     0        0"\
+                       "3     0        0"\
                        "4     0  1110000"\
                        "3     1        0"\
-                       "0   10000      0"\
+                       "1   10000      0"\
                        "0   0   11100  0"\
                        "0   0   0      0"\
                        "0   0   1  00000"\
                        "0       1      0"\
                        "2       1      0"\
                        "0       0      0"\
-                       "0 0000000      0"\
+                       "0 0000000      3"\
                        "0              0"\
                        "0002222222200000"; // our game map
 
@@ -132,6 +132,19 @@ int main()
                 );
             }
         }
+
+        // draw the player on the map
+        draw_rectangle(
+            framebuffer,
+            win_w,
+            win_h,
+            player_x*rect_w,
+            player_y*rect_h,
+            0,
+            5,
+            pack_color(29,236,255)
+        );
+
 
         // draw view of player visibility cone and 3D view
         for( float i=0; i<win_w/2; i++)
